@@ -29,15 +29,28 @@ a.addEventListener('submit', function(event){
         }
         else{
             if(counter==1){
-                arr.push(str);
+                var val=parseInt(str);
+                arr.push(val);
             }
             str='';
             counter++;
         }
     }
     console.log(arr.length);
-    cont.innerHTML="";
+    
+    window.onload=generete_given_array(arr);
 
+    
+})
+
+inp_gen.addEventListener("click",generate_array);
+inp_as.addEventListener("input",update_array_size);
+
+function generete_given_array(arr){
+    div_sizes=[];
+    divs=[];
+    margin_size=0;
+    cont.innerHTML="";
     for(var i=0;i<arr.length;i++)
     {
         div_sizes[i]=Math.floor(arr[i]) + 10;
@@ -46,10 +59,7 @@ a.addEventListener('submit', function(event){
         margin_size=0.1;
         divs[i].style=" margin:0% " + margin_size + "%; background-color:pink; width:" + (100/array_size-(2*margin_size)) + "%; height:" + (div_sizes[i]) + "%;";
     }
-})
-
-inp_gen.addEventListener("click",generate_array);
-inp_as.addEventListener("input",update_array_size);
+}
 
 function generate_array()
 {
@@ -95,7 +105,7 @@ function disable_buttons()
 
 function runalgo()
 {
-    disable_buttons();
+    // disable_buttons();
 
     this.classList.add("butt_selected");
     switch(this.innerHTML)
