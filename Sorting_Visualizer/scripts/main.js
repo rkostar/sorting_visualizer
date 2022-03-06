@@ -36,7 +36,7 @@ a.addEventListener('submit', function(event){
             counter++;
         }
     }
-    console.log(arr.length);
+    // console.log(arr.length);
     
     window.onload=generete_given_array(arr);
 
@@ -50,6 +50,7 @@ function generete_given_array(arr){
     div_sizes=[];
     divs=[];
     margin_size=0;
+    array_size=arr.length;
     cont.innerHTML="";
     for(var i=0;i<arr.length;i++)
     {
@@ -76,7 +77,8 @@ function generate_array()
 }
 
 function update_array_size()
-{
+{   
+    // console.log(array_size);
     array_size=inp_as.value;
     generate_array();
 }

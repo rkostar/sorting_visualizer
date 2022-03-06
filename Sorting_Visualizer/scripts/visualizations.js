@@ -19,11 +19,14 @@ function vis_speed()
         case 5: speed=10000;
                 break;
     }
-    
+    // console.log(speed);
+    console.log(array_size);
     delay_time=10000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
+    // console.log(delay_time);
 }
-
+// console.log(array_size);
 var delay_time=10000/(Math.floor(array_size/10)*speed);        //Decrease numerator to increase speed.
+// console.log(delay_time);
 var c_delay=0;//This is updated ov every div change so that visualization is visible.
 
 function div_update(cont,height,color)
