@@ -2,6 +2,7 @@ function setup() {
 	
 	// Create Canvas of given size
 	var cvs = createCanvas(600, 250);
+	cvs.center();
 }
 
 function draw() {
@@ -11,15 +12,15 @@ function draw() {
 	
 	// Use createDiv() function to
 	// create a div element
-	var myDiv = createDiv('GeeksforGeeks');
+	var myDiv = createDiv('Welcome to Charactes world!!');
 	
-	var myDiv1 = createDiv('A computer science portal for geeks');
+	var myDiv1 = createDiv('A world that is only made of characters');
 	
 	// Use child() function
 	myDiv.child(myDiv1);
 	
 	// Set the position of div element
-	myDiv.position(150, 100);
+	myDiv.position(340, 280);
 	
 	myDiv.style('text-align', 'center');
 	

@@ -22,12 +22,7 @@ inp_string.addEventListener('submit', function(event){
 let video;
 let asciiDiv;
 
-function setup(){
-  var canvas= createCanvas(600, 600);
-}
-function draw(){
-  background('green');
-}
+
 
 function setup() {
   noCanvas();

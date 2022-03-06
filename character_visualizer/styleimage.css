@@ -1,5 +1,4 @@
 html, body {
-    background-image: url("/back3.jpg");
     margin: 0;
     padding: 0;
     background-color: black;
@@ -10,7 +9,8 @@ html, body {
   }
   
   canvas {
+      padding-left: 20%;
+      padding-right: 20%;
     display: block;
   }
-
   

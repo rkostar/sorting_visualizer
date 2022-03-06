@@ -9,5 +9,6 @@ html, body {
 }
 
 canvas {
+  /* padding-left: 20%; */
   display: block;
 }

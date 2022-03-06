@@ -9,7 +9,7 @@ var inp_string=document.getElementById('frm');
 
 // var addBtn= document.getElementById('smit');
 
-var density= 'RajRajaGarnaik ';
+var density= 'jagannath  ';
 let img;
 
 
