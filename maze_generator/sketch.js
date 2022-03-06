@@ -5,8 +5,9 @@ var grid_width= document.getElementById('grid');
 var gen=document.getElementById("a_generate");
 
 var solve=document.getElementById("solve");
+// grid_width.addEventListener('input', increase_grid);
+// console.log(grid_width.value);
 
-console.log(grid_width.value);
 var grid_size=grid_width.value;
 var col_length=csize.value;
 var row_length=rsize.value;
@@ -20,6 +21,9 @@ var current;
 var maze=[];
 
 var stack=[];
+// function increase_grid(){     doubt
+//   w=grid_width.value;
+// }
 
 csize.addEventListener("input",update_canvas);
 rsize.addEventListener("input",update_canvas);
@@ -72,7 +76,7 @@ function solve_func(maze, i, j){
   this.visited=true;
   if(i==maze.length-1 && j==maze[0].length-1){
     this.visited=false;
-    func(visited);
+    path_show(visited);
     console.log("hurray");
     return;
   }
@@ -82,7 +86,7 @@ function solve_func(maze, i, j){
     for(var k=0;k<4;k++){
       if(maze[j][i][k]==false){
         this.visited=false;
-        func(this.visited)
+        path_show(this.visited)
         maze[j][i][k]=true;
         if(k==0){
           solve_func(maze, i, j-1);
@@ -101,7 +105,7 @@ function solve_func(maze, i, j){
     }
 }
 
-function func(visited){    // highlight the path
+function path_show(visited){    // highlight the path
   if(!this.visited){
     var x= this.i*w;
     var y= this.j*w;
@@ -130,7 +134,7 @@ function setup() {
   current=grid[0];
 }
 
-function draw() {
+function draw() {      // background grid
   background(100);
   for(var i=0;i<grid.length;i++){
     grid[i].show();
@@ -199,7 +203,7 @@ function Cell(i, j){      // creating cell
       return undefined;
     
   }
-  this.highlight= function(){
+  this.highlight= function(){   //head
     var x= this.i*w;
     var y= this.j*w;
     noStroke();
@@ -207,7 +211,7 @@ function Cell(i, j){      // creating cell
     rect(x, y, w, w)
   }
 
-  this.highlight_back= function(){
+  this.highlight_back= function(){    // way_back_after stack
     var x= this.i*w;
     var y= this.j*w;
     noStroke();
@@ -218,7 +222,7 @@ function Cell(i, j){      // creating cell
   this.show= function(){
     var x= this.i*w;
     var y= this.j*w;
-    stroke(0,255,0);
+    stroke(0,255,0);            // lines color
     if(this.walls[0]){
       line(x,y,x+w,y);          // top
     }
@@ -232,9 +236,9 @@ function Cell(i, j){      // creating cell
       line(x,y+w,x,y);          //left
     }
 
-    if(this.visited){
+    if(this.visited){  // creating maze
       noStroke();
-      fill(255, 0, 255);
+      fill(245,0, 250);
       rect(x,y,w,w);
     }
              
